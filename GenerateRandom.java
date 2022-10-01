@@ -30,11 +30,10 @@ public class GenerateRandom {
       position = 0;
     }
 
-    System.out.println("The mutating position is " + position);
-
     generated = generated.substring(0, position) + characters.charAt(random.nextInt(characters.length()))
         + generated.substring(position + 1);
 
+    System.out.println("The mutating position is " + position);
     System.out.println("The new sequence is " + generated);
     sc.close();
   }
