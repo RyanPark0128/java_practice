@@ -15,6 +15,7 @@ public class Practice {
         m--;
       }
       System.out.println("r");
+
     }
   }
 }
