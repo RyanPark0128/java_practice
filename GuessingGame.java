@@ -68,7 +68,6 @@ public class GuessingGame {
         count = resetCount();
       }
     }
-
     sc.close();
   }
 }
