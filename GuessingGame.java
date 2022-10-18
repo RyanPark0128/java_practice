@@ -4,7 +4,7 @@ import java.util.Random;
 public class GuessingGame {
   public static int getNumber(int i, int j) {
     Random random = new Random();
-    return random.nextInt(i, j);
+    return random.nextInt(i, j + 1);
   }
 
   public static int getGuess(Scanner sc) {
