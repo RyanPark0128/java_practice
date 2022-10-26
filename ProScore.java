@@ -16,9 +16,9 @@ public class ProScore {
 
     public static boolean isValidSequence(String seq) {
         String pSequence = "ARNDCQEGHILKMFPSTWYVBZX*";
-        String[] arrayOfSequence = seq.toUpperCase().split("");
+        seq = seq.toUpperCase();
         for (int i = 0; i < seq.length(); i++) {
-            if (pSequence.indexOf(arrayOfSequence[i]) == -1) {
+            if (pSequence.indexOf(seq.charAt(i)) == -1) {
                 return false;
             }
         }
@@ -33,11 +33,21 @@ public class ProScore {
     }
 
     public static int scoreNucleotides(String seq1, String seq2, int[][] blosum62) {
-        return 123;
+        System.out.println("Comparing sequences:");
+        System.out.println(seq1);
+        System.out.println(seq2);
+        seq1 = seq1.toUpperCase();
+        seq2 = seq2.toUpperCase();
+        int sum = 0;
+        for (int i = 0; i < seq1.length(); i++) {
+            sum = sum + blosum62[proToIndex(seq1.charAt(i))][proToIndex(seq2.charAt(i))];
+        }
+        return sum;
     }
 
-    public static int proToInder(char protein) {
-        return 123;
+    public static int proToIndex(char protein) {
+        String pSequence = "ARNDCQEGHILKMFPSTWYVBZX*";
+        return pSequence.indexOf(protein);
     }
 
     public static void main(String[] args) {
@@ -74,7 +84,7 @@ public class ProScore {
         } else if (sequenceOne.length() < sequenceTwo.length()) {
             sequenceOne = makeEqualLength(sequenceOne, sequenceTwo.length() - sequenceOne.length());
         }
-
+        System.out.println("Score is: " + scoreNucleotides(sequenceOne, sequenceTwo, blosum62));
     }
 
 }
