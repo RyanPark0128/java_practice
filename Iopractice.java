@@ -1,19 +1,14 @@
 import java.util.Scanner;
+import java.io.*;
 
 public class Iopractice {
-  public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    int x = scan.nextInt();
-    int y = scan.nextInt();
-    try {
-      x = x / y;
-      System.out.println("trying");
-    } catch (ArithmeticException e) {
-      y = 3;
-      x = x / y;
-      System.out.println("error");
-    } finally {
-      System.out.println("Dividing gives:" + x);
+  public static void main(String[] args) throws IOException {
+    Scanner scan = new Scanner(new File("classlist.txt"));
+    scan.useDelimiter("\n");
+    while (scan.hasNext()) {
+      System.out.println(scan.next());
     }
+    scan.close();
   }
+
 }
