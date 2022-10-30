@@ -9,8 +9,9 @@ public class NoVowels {
         PrintWriter fout = new PrintWriter("output.txt");
         // define all vowels as variable
         String vowels = "aeiouAEIOU";
+        // use delimiter to process data
         fin.useDelimiter("\n");
-
+        // use while loop to go through all the tokens
         while (fin.hasNext()) {
             String token = fin.next();
             String modified = "";
