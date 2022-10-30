@@ -18,9 +18,7 @@ public class NoVowels {
             }
             fout.print(modified);
         }
-
         fout.close();
         fin.close();
-
     }
 }
