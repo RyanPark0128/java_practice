@@ -3,8 +3,11 @@ import java.util.Scanner;
 
 public class NoVowels {
     public static void main(String[] args) throws FileNotFoundException {
+        // initialize file with scanner
         Scanner fin = new Scanner(new File("test.txt"));
+        // initialize PrintWriter
         PrintWriter fout = new PrintWriter("output.txt");
+        // define all vowels as variable
         String vowels = "aeiouAEIOU";
         fin.useDelimiter("\n");
 
