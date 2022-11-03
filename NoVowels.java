@@ -16,12 +16,15 @@ public class NoVowels {
             String token = fin.next();
             String modified = "";
             for (int i = 0; i < token.length(); i++) {
+                // if it is not vowel, add it to modified variable
                 if (vowels.indexOf(token.charAt(i)) == -1) {
                     modified = modified + token.charAt(i);
                 }
             }
+            // write the modified variable to new file
             fout.print(modified);
         }
+        // close scanner and PrintWriter
         fout.close();
         fin.close();
     }
