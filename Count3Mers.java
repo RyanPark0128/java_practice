@@ -38,7 +38,9 @@ public class Count3Mers {
     String sequence = "";
 
     while (fin.hasNext()) {
+      // initialize and declare token
       String token = fin.next();
+
       // if token's first character is >. It will print out message. Else, the token
       // is combined with previous tokens with a space to separate them.
       if (token.charAt(0) == '>') {
@@ -47,6 +49,7 @@ public class Count3Mers {
         sequence += " " + token;
       }
     }
+
     // initializes array with 848485, because the maximum number of index it
     // requires would be TTT(848484)
     int[] arr = new int[848485];
