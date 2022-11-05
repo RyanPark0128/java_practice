@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Count3Mers {
+
   // method converts numbers to X(representing 10) and remainder
   public static String convertNumber(int num) {
     String converted = "";
@@ -25,10 +26,13 @@ public class Count3Mers {
   }
 
   public static void main(String[] args) throws FileNotFoundException {
+
     // Initialize the Scanner
     Scanner fin = new Scanner(new File("Fasta.fa"));
+
     // Initialize the PrintWriter
     PrintWriter fout = new PrintWriter("output.txt");
+
     // use delimiter to process data into a token.
     fin.useDelimiter("\n");
     String sequence = "";
@@ -43,7 +47,6 @@ public class Count3Mers {
         sequence += " " + token;
       }
     }
-
     // initializes array with 848485, because the maximum number of index it
     // requires would be TTT(848484)
     int[] arr = new int[848485];
