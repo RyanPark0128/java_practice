@@ -31,6 +31,7 @@ public class ConnectFour {
   }
 
   public static void boardStatus(String[][] board) {
+    System.out.println(" ");
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[i].length; j++) {
         String temp = "";
@@ -145,9 +146,11 @@ public class ConnectFour {
           }
         } else {
           System.out.println("Please pick a number from 1 to 7");
+          System.out.println("Pick a column");
         }
       } catch (NumberFormatException e) {
         System.out.println("Please pick a number from 1 to 7");
+        System.out.println("Pick a column");
       }
     }
   }
