@@ -68,65 +68,34 @@ public class ConnectFour {
   public static Boolean checkWinner(String[][] board, String player) {
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[i].length; j++) {
-        if (j > 2) {
-          if (board[i][j] == player && board[i][j - 1] == player && board[i][j - 2] == player
-              && board[i][j - 3] == player) {
-            return true;
-          }
-        }
-        if (j < 4) {
-          if (board[i][j] == player && board[i][j + 1] == player && board[i][j + 2] == player
-              && board[i][j + 3] == player) {
-            return true;
-          }
-        }
-
-        if (i > 2) {
-          if (board[i][j] == player && board[i - 1][j] == player && board[i - 2][j] == player
-              && board[i - 3][j] == player) {
-            return true;
-          }
-        }
-
-        if (i < 3) {
-          if (board[i][j] == player && board[i + 1][j] == player && board[i + 2][j] == player
-              && board[i + 3][j] == player) {
-            return true;
-          }
-        }
-
-        if (j > 2 && i > 2) {
-          if (board[i][j] == player && board[i - 1][j - 1] == player && board[i - 2][j - 2] == player
-              && board[i - 3][j - 3] == player) {
-            return true;
-          }
-
+        if (j > 2 && board[i][j] == player && board[i][j - 1] == player && board[i][j - 2] == player
+            && board[i][j - 3] == player) {
+          return true;
+        } else if (j < 4 && board[i][j] == player && board[i][j + 1] == player && board[i][j + 2] == player
+            && board[i][j + 3] == player) {
+          return true;
+        } else if (i > 2 && board[i][j] == player && board[i - 1][j] == player && board[i - 2][j] == player
+            && board[i - 3][j] == player) {
+          return true;
+        } else if (i < 3 && board[i][j] == player && board[i + 1][j] == player && board[i + 2][j] == player
+            && board[i + 3][j] == player) {
+          return true;
+        } else if (j > 2 && i > 2 && board[i][j] == player && board[i - 1][j - 1] == player
+            && board[i - 2][j - 2] == player && board[i - 3][j - 3] == player) {
+          return true;
           // up left
-        }
-
-        if (j < 4 && i < 3) {
-
+        } else if (j < 4 && i < 3 && board[i][j] == player && board[i + 1][j + 1] == player
+            && board[i + 2][j + 2] == player && board[i + 3][j + 3] == player) {
           // down right
-          if (board[i][j] == player && board[i + 1][j + 1] == player && board[i + 2][j + 2] == player
-              && board[i + 3][j + 3] == player) {
-            return true;
-          }
-        }
-
-        if (j < 4 && i > 2) {
+          return true;
+        } else if (j < 4 && i > 2 && board[i][j] == player && board[i - 1][j + 1] == player
+            && board[i - 2][j + 2] == player && board[i - 3][j + 3] == player) {
           // up right
-          if (board[i][j] == player && board[i - 1][j + 1] == player && board[i - 2][j + 2] == player
-              && board[i - 3][j + 3] == player) {
-            return true;
-          }
-        }
-
-        if (j > 2 && i < 3) {
+          return true;
+        } else if (j > 2 && i < 3 && board[i][j] == player && board[i + 1][j - 1] == player
+            && board[i + 2][j - 2] == player && board[i + 3][j - 3] == player) {
           // down left
-          if (board[i][j] == player && board[i + 1][j - 1] == player && board[i + 2][j - 2] == player
-              && board[i + 3][j - 3] == player) {
-            return true;
-          }
+          return true;
         }
       }
     }
