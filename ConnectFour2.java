@@ -42,7 +42,10 @@ public class ConnectFour2 {
         break;
       }
 
-      // Now, it is AI's turn. Same process with second player.
+      // Now, it is AI's turn. Instead of getting inputs from user the A.I will:
+      // 1) take the win if it can
+      // 2) blocks user if user is about to win
+      // 3) otherwise, randomly place the disk.
       System.out.println("It is " + player2 + " players turn");
       System.out.println("Pick a column");
       if (possibleMove(board, player2) > 0) {
