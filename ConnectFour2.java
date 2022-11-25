@@ -48,11 +48,21 @@ public class ConnectFour2 {
       // 3) otherwise, randomly place the disk.
       System.out.println("It is " + player2 + " players turn");
       System.out.println("Pick a column");
+
+      // This function call will check possible win move for A.I, and A.I will place
+      // disk to win.
       if (possibleMove(board, player2) > 0) {
         placeDisk(board, possibleMove(board, player2) + 1, player2);
-      } else if (possibleMove(board, player1) > 0) {
+      }
+      // This function call will check possible win move for player and A.I will place
+      // disk to block users disk.
+      else if (possibleMove(board, player1) > 0) {
         placeDisk(board, possibleMove(board, player1) + 1, player2);
-      } else {
+      }
+      // Otherwise it will generate random number and place disk accordingly. If the
+      // column is full it will generate another random value until it finds column
+      // that is not full
+      else {
         while (true) {
           Random rand = new Random();
           if (placeDisk(board, rand.nextInt(7) + 1, player2)) {
@@ -61,24 +71,19 @@ public class ConnectFour2 {
         }
       }
 
+      // If the board is full without a winner, the program will alert user and end
+      // the game.
       if (!boardStatus(board) && !checkWinner(board, player2)) {
         System.out.println("Game board is full! Draw!");
         break;
       }
 
+      // If there is a winner, game ends.
       else if (checkWinner(board, player2)) {
         System.out.println(player2 + " Wins");
         break;
       }
 
-      // validInput(scan, board, player2);
-      // if (!boardStatus(board) && !checkWinner(board, player2)) {
-      // System.out.println("Game board is full! Draw!");
-      // break;
-      // } else if (checkWinner(board, player2)) {
-      // System.out.println(player2 + " Wins");
-      // break;
-      // }
     }
     // if the game ends, closes the scanner and terminate.
     scan.close();
