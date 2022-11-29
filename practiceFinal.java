@@ -10,7 +10,13 @@ public class practiceFinal {
     // System.out.println(arr[9]);
     int[] grades = { 90, 99, 55, 23, 32 };
     // System.out.println(Arrays.toString(grades));
-    multipleList("zxcxz", "asd", "asdsd", "sadsadxzczxc", "qwasd");
+    // multipleList("zxcxz", "asd", "asdsd", "sadsadxzczxc", "qwasd");
+    String s = "Hello World";
+    String[] result = s.split("");
+    int[] sum = { 1, 2, 3 };
+    int[] copied = Arrays.copyOf(sum, sum.length);
+    System.out.println(Arrays.toString(sum));
+    System.out.println(Arrays.toString(copied));
 
   }
 
