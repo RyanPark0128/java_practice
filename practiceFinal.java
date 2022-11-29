@@ -18,18 +18,21 @@ public class practiceFinal {
     String[] result = s.split("");
     int[] sum = { 1, 2, 3 };
     int[] copied = Arrays.copyOf(sum, sum.length);
-    System.out.println(Arrays.toString(sum));
-    System.out.println(Arrays.toString(copied));
+    // System.out.println(Arrays.toString(sum));
+    // System.out.println(Arrays.toString(copied));
 
-    Scanner scan = new Scanner(new File("output.txt"));
-    PrintWriter fout = new PrintWriter(new File("example.txt"));
+    // Scanner scan = new Scanner(new File("output.txt"));
+    // PrintWriter fout = new PrintWriter(new File("example.txt"));
 
-    while (scan.hasNext()) {
-      fout.println(scan.next());
-    }
+    // while (scan.hasNext()) {
+    // fout.println(scan.next());
+    // }
 
-    scan.close();
-    fout.close();
+    // scan.close();
+    // fout.close();
+
+    System.out
+        .println("backspace \b tab \t newline \n carraige return \r double quote \" single quote \' backslash \\   ");
 
   }
 
