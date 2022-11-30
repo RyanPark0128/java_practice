@@ -1,7 +1,10 @@
 import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class practiceFinal {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // System.out.println(Math.floor(3.4));
     // Random generate = new Random();
     // System.out.println(generate.nextFloat(100));
@@ -17,6 +20,16 @@ public class practiceFinal {
     int[] copied = Arrays.copyOf(sum, sum.length);
     System.out.println(Arrays.toString(sum));
     System.out.println(Arrays.toString(copied));
+
+    Scanner scan = new Scanner(new File("output.txt"));
+    PrintWriter fout = new PrintWriter(new File("example.txt"));
+
+    while (scan.hasNext()) {
+      fout.println(scan.next());
+    }
+
+    scan.close();
+    fout.close();
 
   }
 
