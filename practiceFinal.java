@@ -1,10 +1,11 @@
 import java.util.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class practiceFinal {
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException, FileNotFoundException {
     // System.out.println(Math.floor(3.4));
     // Random generate = new Random();
     // System.out.println(generate.nextFloat(100));
@@ -33,7 +34,13 @@ public class practiceFinal {
 
     System.out
         .println("backspace \b tab \t newline \n carraige return \r double quote \" single quote \' backslash \\   ");
+    Scanner input = new Scanner(System.in);
 
+    while (input.hasNext()) {
+      System.out.println(input.next());
+    }
+
+    input.close();
   }
 
   public static void multipleList(String... nameList) {
