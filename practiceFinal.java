@@ -32,15 +32,20 @@ public class practiceFinal {
     // scan.close();
     // fout.close();
 
-    System.out
-        .println("backspace \b tab \t newline \n carraige return \r double quote \" single quote \' backslash \\   ");
-    Scanner input = new Scanner(System.in);
+    // System.out
+    // .println("backspace \b tab \t newline \n carraige return \r double quote \"
+    // single quote \' backslash \\ ");
+    // Scanner input = new Scanner(System.in);
 
-    while (input.hasNext()) {
-      System.out.println(input.next());
-    }
+    // while (input.hasNext()) {
+    // System.out.println(input.next());
+    // }
 
-    input.close();
+    // input.close();
+    String test = "aaAAbBbB";
+
+    System.out.println(test.charAt(test.length() - 3) == test.charAt(test.length() - 1));
+
   }
 
   public static void multipleList(String... nameList) {
