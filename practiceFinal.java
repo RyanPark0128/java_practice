@@ -46,6 +46,26 @@ public class practiceFinal {
 
     System.out.println(test.charAt(test.length() - 3) == test.charAt(test.length() - 1));
 
+    int[] sorting = { 5, 23, 213, 3, 46, 4, 78, 9, 20, 23, 55, 68, 98, 28, 11, 59 };
+
+    for (int i = 0; i < sorting.length; i++) {
+      int min = sorting[i];
+      int index = i;
+      int temp;
+      for (int j = i + 1; j < sorting.length; j++) {
+        if (min > sorting[j]) {
+          min = sorting[j];
+          index = j;
+        }
+      }
+      temp = sorting[i];
+      sorting[i] = sorting[index];
+      sorting[index] = temp;
+
+    }
+
+    System.out.println(Arrays.toString(sorting));
+
   }
 
   public static void multipleList(String... nameList) {
