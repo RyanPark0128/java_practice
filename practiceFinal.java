@@ -70,19 +70,36 @@ public class practiceFinal {
 
     // Insertion Sort
 
-    int n = sorting.length;
-    for (int j = 1; j < n; j++) {
-      int key = sorting[j];
-      int i = j - 1;
-      while ((i > -1) && (sorting[i] > key)) {
-        sorting[i + 1] = sorting[i];
-        i--;
-      }
-      sorting[i + 1] = key;
+    // int n = sorting.length;
+    // for (int j = 1; j < n; j++) {
+    // int key = sorting[j];
+    // int i = j - 1;
+    // while ((i > -1) && (sorting[i] > key)) {
+    // sorting[i + 1] = sorting[i];
+    // i--;
+    // }
+    // sorting[i + 1] = key;
+    // }
+    Arrays.sort(sorting);
+    System.out.println(search(sorting, 68));
+
+  }
+
+  public static int search(int[] a, int b) {
+    if (a.length == 0)
+      return -1;
+    int low = 0, high = a.length - 1;
+    int middle = (low + high) / 2;
+    while (low <= high) {
+      if (b > a[middle])
+        low = middle + 1;
+      else if (b < a[middle])
+        high = middle - 1;
+      else
+        return middle;
+      middle = (low + high) / 2;
     }
-
-    System.out.println(Arrays.toString(sorting));
-
+    return -1;
   }
 
   public static void multipleList(String... nameList) {
