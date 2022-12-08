@@ -95,31 +95,27 @@ public class practiceFinal {
 
     // int[] arr = { 3, 5, 1, 2, 7, 8, 9 };
     // int[] arr = { 2, 3, 4, 5, 6, 7, 8, 9 };
-    int[] arr = { 10, 10, 9, 8, 6, 5, 3, 2 };
+    String item = "aAbbbasdnaa";
+    char target = 'b';
+    int n = 3;
 
-    int count = 0;
-
-    for (int i = 0; i < arr.length - 1; i++) {
-      if (arr[i] <= arr[i + 1]) {
-        count++;
+    for (int i = 0; i < item.length(); i++) {
+      int count = 0;
+      if (i > 0 && item.charAt(i) == target && item.charAt(i - 1) != target || item.charAt(i) == target && i == 0) {
+        for (int j = 1; j < n + 1; j++) {
+          if (item.charAt(i) == item.charAt(i + j)) {
+            count++;
+          }
+          // System.out.println(count);
+          if (count == n - 1 && item.charAt(i + n) != target) {
+            System.out.println(i);
+          }
+        }
       }
     }
 
-    if (count == arr.length - 1) {
-      System.out.println(1);
-    }
-    count = 0;
+    // System.out.println(-1);
 
-    for (int j = 0; j < arr.length - 1; j++) {
-      if (arr[j] >= arr[j + 1]) {
-        count++;
-      }
-    }
-    if (count == arr.length - 1) {
-      System.out.println(-1);
-    } else {
-      System.out.println(0);
-    }
   }
 
   public static boolean search(int a, int b) {
